@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ごいたAIの実装手法 | Goita Labo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="しばらく間が空いてしまいましたね^^;すこしプログラミング欲がでてきたので、ここも書いてしまいましょう。
+ごいたAIをどう作るか？という点についてごいたのAIを作成するためのアプローチは大きく分けて、２通りあります。
+
+ルールベースの実装
+
+機械学習による実装(本命)
+
+
+それぞれどういうことか、説明しましょう。
+ルールベースの実装コンピューターが人間の仕事を手伝ったり、置き換わったリするようにな">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ごいたAIの実装手法">
+<meta property="og:url" content="http://yoskeoka.github.io/2016/03/09/ai-2016-03-09/index.html">
+<meta property="og:site_name" content="Goita Labo">
+<meta property="og:description" content="しばらく間が空いてしまいましたね^^;すこしプログラミング欲がでてきたので、ここも書いてしまいましょう。
+ごいたAIをどう作るか？という点についてごいたのAIを作成するためのアプローチは大きく分けて、２通りあります。
+
+ルールベースの実装
+
+機械学習による実装(本命)
+
+
+それぞれどういうことか、説明しましょう。
+ルールベースの実装コンピューターが人間の仕事を手伝ったり、置き換わったリするようにな">
+<meta property="og:updated_time" content="2017-03-18T05:04:38.470Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ごいたAIの実装手法">
+<meta name="twitter:description" content="しばらく間が空いてしまいましたね^^;すこしプログラミング欲がでてきたので、ここも書いてしまいましょう。
+ごいたAIをどう作るか？という点についてごいたのAIを作成するためのアプローチは大きく分けて、２通りあります。
+
+ルールベースの実装
+
+機械学習による実装(本命)
+
+
+それぞれどういうことか、説明しましょう。
+ルールベースの実装コンピューターが人間の仕事を手伝ったり、置き換わったリするようにな">
+<meta name="twitter:creator" content="@GoitaOnline">
+  
+    <link rel="alternate" href="/atom.xml" title="Goita Labo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Goita Labo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoskeoka.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ai-2016-03-09" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/09/ai-2016-03-09/" class="article-date">
+  <time datetime="2016-03-09T13:28:23.000Z" itemprop="datePublished">2016-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ごいたAIの実装手法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>しばらく間が空いてしまいましたね^^;<br>すこしプログラミング欲がでてきたので、ここも書いてしまいましょう。</p>
+<h2 id="ごいたAIをどう作るか？という点について"><a href="#ごいたAIをどう作るか？という点について" class="headerlink" title="ごいたAIをどう作るか？という点について"></a>ごいたAIをどう作るか？という点について</h2><p>ごいたのAIを作成するためのアプローチは大きく分けて、２通りあります。</p>
+<ol>
+<li><p>ルールベースの実装</p>
+</li>
+<li><p>機械学習による実装(<strong>本命</strong>)</p>
+</li>
+</ol>
+<p>それぞれどういうことか、説明しましょう。</p>
+<h2 id="ルールベースの実装"><a href="#ルールベースの実装" class="headerlink" title="ルールベースの実装"></a>ルールベースの実装</h2><p>コンピューターが人間の仕事を手伝ったり、置き換わったリするようになって、35年以上経ちました。その間にAIを作成しようという動きは何度かありまして・・・<br><a href="https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0" target="_blank" rel="external">エキスパートシステム</a>というものを聞いたことがあるでしょうか？エキスパートシステムは、普通であれば大量の知識を抱えた専門家（法律家とか税理士とか、技術屋もですが、そういう人です）に代わって、ある問に対する答えを返すというものです。これを使って業務等に活かしていこうという研究や開発が行われていたこともありました。実装方法はというと、ものすごく大雑把に言えば、</p>
+<p><strong>○○ならば××する</strong></p>
+<p>というルールを大量に覚えさせて、最終的な答えを導き出すものです。</p>
+<p>ごいたは駒の数が、他のゲームに比べれば比較的少なめなので、作成するべきルールも、数えることが出来る程度に収まってくれるのではないでしょうか。それでも数十個のルールを組み込む必要はありそうです。</p>
+<p>例えばですが</p>
+<ul>
+<li>3香以上持っていれば、攻めは香から行う</li>
+<li>王玉があれば、２回目の攻めは王で行う</li>
+<li>しかし、王玉があっても、角角 or 飛飛があれば２回めの攻めはそちらで行う</li>
+</ul>
+<p>とか、そういうのですね。書けば書くほどキリがない気もします。<br>書いたら書いたで、それはごいたの考え方という解説書になるほど書けるのではないでしょうか。</p>
+<p>ルールベースの実装とは、こういった場面毎の判断基準をすべてプログラムに組み込んで、最適な手を判断させる方法です。<br>これでも、まあ、対戦してて不足のない相手は作れるでしょう。</p>
+<h2 id="機械学習による実装"><a href="#機械学習による実装" class="headerlink" title="機械学習による実装"></a>機械学習による実装</h2><p>最近、この話題アツいですよね。自動運転車とか、ディープラーニングとか、ニューラルネットワークとか、画像認識、自然言語処理、、、とか。</p>
+<p>現実に実用化されているものでは、Facebookの顔認識機能や、Google翻訳は便利ですよね。<br>これらは、以前はルールベースで判断などをしていたものを、人工知能の研究が進むことで、機械学習の手法に置き換わっていったものです。プログラムは何をしているかというと、正解やお手本となる大量のデータを読み込んで、その中から共通のルールや、特徴などを抽出するという作業を行っています。その抽出した特徴を使って、新しい問いに対しての答えを導き出します。<br>翻訳機能であれば、人間が翻訳した原版と翻訳版のデータを何冊分も読み込ませるなどして、翻訳のパターンを覚えた結果を使って、あなたが入力した文章の翻訳結果を導き出しています。</p>
+<p>最近のニュースになっていましたが、囲碁のプログラムがついにプロレベルになったとか。これも機械学習が使われています。</p>
+<p>ごいたは駒が少ないとはいえ、その組み合わせは膨大です。また試合の展開も似ているようで、異なる場面が多く登場します。その中から、勝ちパターンを探すことを機械にやらせようというのが機械学習です。</p>
+<h2 id="ルールベース-vs-機械学習"><a href="#ルールベース-vs-機械学習" class="headerlink" title="ルールベース vs 機械学習"></a>ルールベース vs 機械学習</h2><p>突然、ごいたとは関係ない話ですみません。<br>私は、オセロがわりと強いのですが、オセロというのは、<a href="http://uguisu.skr.jp/othello/" target="_blank" rel="external">勝ち方の理論</a>がかなり確立されていて、プログラムの作りがいのある題材なのです。過去にオセロプログラムを作ってみたこともあります。<br>オセロプログラムも、勝ち方の理論をルールベースで組み込んでいけばそれなりに強くすることはできるのですが、どうしても限界があります。有名（？）なところで、<a href="http://www.mameson.com/prw/prw.html" target="_blank" rel="external">パンダオセロ</a>というのがあります。パンダパパは強い、と言われているのですが、これはある程度のオセロプレイヤーならまず負けないレベルなので、たいして強くありません。<br>しかし、機械学習をベースに強くなったロジステロというソフトは、人間のオセロチャンピオンに圧倒的な強さで勝利しました。1997年のことです。<br>それから２０年近く経って、オセロよりも圧倒的に計算量の多い囲碁で同じことが起きようとしています。</p>
+<p>ルールベースのルールを人間が一つ一つ組み上げていくのは労力に見合わない・・・と今までの事例が証明しているので、ごいたも機械学習を前提としてAIを考えていきます。</p>
+<h2 id="ごいたと機械学習"><a href="#ごいたと機械学習" class="headerlink" title="ごいたと機械学習"></a>ごいたと機械学習</h2><p>単純に機械学習でごいたAIを作っていくといっても、これもまた、色々と分類したりすることができるのですが、それは次回、ごいたAI〜機械学習編〜として別途書きましょう。<br>ごいた特有の課題もあります。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoskeoka.github.io/2016/03/09/ai-2016-03-09/" data-id="cj0fn9ocs0000cdroa233jj7o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ごいた/">ごいた</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/18/ai-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AI実装手法のメモ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/01/roadmap/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">このブログに書くこと</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goita-online/">goita-online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ごいた/">ごいた</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ツール/">ツール</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 15px;">AI</a> <a href="/tags/goita-online/" style="font-size: 10px;">goita-online</a> <a href="/tags/ごいた/" style="font-size: 20px;">ごいた</a> <a href="/tags/ツール/" style="font-size: 10px;">ツール</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/18/introduce-goita-cli/">ごいたコマンドアプリの紹介</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/18/ai-memo/">AI実装手法のメモ</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/09/ai-2016-03-09/">ごいたAIの実装手法</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/01/roadmap/">このブログに書くこと</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 yoskeoka<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

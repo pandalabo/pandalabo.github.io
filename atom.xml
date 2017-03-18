@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Goita Labo</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoskeoka.github.io/"/>
+  <updated>2017-03-18T19:26:12.308Z</updated>
+  <id>http://yoskeoka.github.io/</id>
+  
+  <author>
+    <name>yoskeoka</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ごいたコマンドアプリの紹介</title>
+    <link href="http://yoskeoka.github.io/2017/03/18/introduce-goita-cli/"/>
+    <id>http://yoskeoka.github.io/2017/03/18/introduce-goita-cli/</id>
+    <published>2017-03-18T12:09:51.000Z</published>
+    <updated>2017-03-18T19:26:12.308Z</updated>
+    
+    <content type="html"><![CDATA[<p>ごいたが遊べるコマンドラインツールを作成しました。</p>
+<p>こんな画面です。</p>
+<p><img src="/2017/03/18/introduce-goita-cli/2017-03-18-23-40-31.png" alt="ごいたコマンド"></p>
+<p>インストール方法等を説明します。  </p>
+<h1 id="インストール手順"><a href="#インストール手順" class="headerlink" title="インストール手順"></a>インストール手順</h1><p>Windows, Linux, MacOS で手順は共通です。</p>
+<h2 id="Node-jsをインストールする"><a href="#Node-jsをインストールする" class="headerlink" title="Node.jsをインストールする"></a>Node.jsをインストールする</h2><p>Node.jsダウンロードページへ行き、LTS版をダウンロードします。</p>
+<p><a href="https://nodejs.org/" target="_blank" rel="external">https://nodejs.org/</a></p>
+<p>お使いのOSに合ったものがダウンロード候補に表示されます。</p>
+<p>インストール手順はこちらを参考に。<br>npmパッケージマネージャーはこのあと使用するので、インストールオプションから外さないようにしてください。<br>環境変数PATHへの追加のオプションも外さないようにしてください。</p>
+<p>うまくいきそうな参考サイトをピックアップしておいたので、なんとかうまくやってください。</p>
+<ul>
+<li>Windows: <a href="http://qiita.com/taipon_rock/items/9001ae194571feb63a5e" target="_blank" rel="external">Node.js / npmをインストールする（for Windows）</a></li>
+<li>MacOS: <a href="http://qiita.com/akakuro43/items/600e7e4695588ab2958d" target="_blank" rel="external">Macにnode.jsをインストールする手順。</a></li>
+<li>Linux: お使いのディストリに合わせた手順を行ってください。</li>
+</ul>
+<p>コマンドプロンプト(端末・Terminal) にて、以下の2つのコマンドを打ち、バージョンが表示されたら次のステップへ進むことが出来ます。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line">npm -v</div></pre></td></tr></table></figure>
+<p><img src="/2017/03/18/introduce-goita-cli/2017-03-19-00-28-04.png" alt="Node.jsのバージョン確認"></p>
+<h2 id="goita-cli-をインストールする"><a href="#goita-cli-をインストールする" class="headerlink" title="goita-cli をインストールする"></a>goita-cli をインストールする</h2><p>以下のコマンドを実行します。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g goita-cli</div></pre></td></tr></table></figure>
+<p>Windowsなら管理者権限、Linuxなら sudo が必要になるかもしれません。  </p>
+<h1 id="アップデート手順"><a href="#アップデート手順" class="headerlink" title="アップデート手順"></a>アップデート手順</h1><p>今後、コマンドツールに更新があった場合にすでにインストール済みの場合は以下のコマンドで最新化します。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm update -g goita-cli</div></pre></td></tr></table></figure>
+<h1 id="アンインストール手順"><a href="#アンインストール手順" class="headerlink" title="アンインストール手順"></a>アンインストール手順</h1><p>ごいたコマンドのアンインストールには</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall -g goita-cli</div></pre></td></tr></table></figure>
+<p>Node.jsのアンインストールには、それぞれのOS毎のアンインストール手順を実行してください。</p>
+<h1 id="遊び方"><a href="#遊び方" class="headerlink" title="遊び方"></a>遊び方</h1><p>以下のコマンドでゲームが起動します。コマンドプロンプト(端末・Terminal)の大きさはある程度縦長にしておかないと表示しきれません。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">goita game</div></pre></td></tr></table></figure></p>
+<p>もし相方が5しの場合、<strong>続行(continue-to-play)</strong>か<strong>配り直し(redeal)</strong>の選択が表示されます。<br>続行ならば、 y をタイプしてEnter<br>配り直しならば、 n をタイプしてEnter<br>で進めます。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">your partner has 5 shi</div><div class="line">-----------------------</div><div class="line">do you wish to play?</div><div class="line">yes/no&gt;</div></pre></td></tr></table></figure>
+<p>操作手順は、自分の番が回ってきたら、<strong>受け駒選択</strong>、または<strong>なし</strong>を入力します。<br>キーボードを使って駒に対応した半角数字<code>1〜9</code>または、なしに対応する<code>0</code>を入力して、Enterキーを押します。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">5: 金, 8: 王, 0: なし</div><div class="line">select block koma&gt;</div></pre></td></tr></table></figure>
+<p><strong>なし</strong>以外を選択した場合は、続けて<strong>攻め駒</strong>を入力します。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">5: 金, 8: 王, 0: なし</div><div class="line">select block koma&gt;5</div><div class="line">1: し, 2: 香, 3: 馬</div><div class="line">select attack koma&gt;</div></pre></td></tr></table></figure>
+<h1 id="対戦相手のコンピューターについて"><a href="#対戦相手のコンピューターについて" class="headerlink" title="対戦相手のコンピューターについて"></a>対戦相手のコンピューターについて</h1><p>現状のバージョン 0.0.5では非常に弱いです。<br>手応えのあるやつらに出来るようにしたいので、強くするアイデアはいつでもお待ちしています。<br>何かアイデアがありましたら、  </p>
+<p>Twitter: <a href="https://twitter.com/goitaonline" target="_blank" rel="external">＠GoitaOnline</a>  </p>
+<p>にメッセージをくれるとありがたいです。</p>
+<p>また、コンピューターの実装は<br><a href="https://github.com/Goita/goita-ai-sample-js" target="_blank" rel="external">https://github.com/Goita/goita-ai-sample-js</a><br>にありますので、ご自由に改造してPullRequestいただけると嬉しいです。</p>
+<h1 id="プログラムソースコード"><a href="#プログラムソースコード" class="headerlink" title="プログラムソースコード"></a>プログラムソースコード</h1><p>githubの<a href="https://github.com/Goita" target="_blank" rel="external"><strong>Goita Organization</strong></a>にソースコードを置いています。</p>
+<p>ちょっとごいた関係のプログラムを書きたくなった・・・　そんな場合は</p>
+<p><a href="https://github.com/Goita/goita-core-js" target="_blank" rel="external">Goita Core Library - https://github.com/Goita/goita-core-js</a></p>
+<p>をご利用ください。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ごいたが遊べるコマンドラインツールを作成しました。&lt;/p&gt;
+&lt;p&gt;こんな画面です。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2017/03/18/introduce-goita-cli/2017-03-18-23-40-31.png&quot; alt=&quot;ごいたコマンド&quot;&gt;&lt;/p&gt;
+&lt;p
+    
+    </summary>
+    
+    
+      <category term="ごいた" scheme="http://yoskeoka.github.io/tags/%E3%81%94%E3%81%84%E3%81%9F/"/>
+    
+      <category term="ツール" scheme="http://yoskeoka.github.io/tags/%E3%83%84%E3%83%BC%E3%83%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AI実装手法のメモ</title>
+    <link href="http://yoskeoka.github.io/2017/03/18/ai-memo/"/>
+    <id>http://yoskeoka.github.io/2017/03/18/ai-memo/</id>
+    <published>2017-03-18T06:18:33.000Z</published>
+    <updated>2017-03-18T09:33:34.945Z</updated>
+    
+    <content type="html"><![CDATA[<p>月日が経つのは早いもので、前回の投稿が約１年前ということに驚きを隠せません。<br>ごいたオンラインも、もうそれくらい長い間稼働しているのですね。</p>
+<p>最近ごいたソフトウェアをこそこそと作成しているので、開発ブログのほうも更新しましょう。</p>
+<p>まずは、ずっと前にメモしたAI実装手法のメモを公開します。</p>
+<p>ちなみに、全プレイヤーが最善手を目指して打つという前提で考えています。</p>
+<h1 id="ごいたAI的な用語"><a href="#ごいたAI的な用語" class="headerlink" title="ごいたAI的な用語"></a>ごいたAI的な用語</h1><p><strong>手の評価</strong><br>手の評価とは、この<code>受け・攻め</code>または<code>なし</code>を行った場合に、自分のチームが何点獲得するかを数値化することを指します。<br>自分のチームが20点上がりするなら、 <code>+20</code><br>相手チームが30点上がりするなら、 <code>-30</code><br>自分が上がる場合と、相方が上がる場合とで評価に差をつけることも考えられますが、一旦これは考えないことにします。</p>
+<p><strong>予測</strong><br>相手の残っている手駒を予想することです。</p>
+<p><strong>盤面</strong><br>ごいたの場のことです。打ち出し(1手目)、序盤(2〜4)、中盤(5〜7)、終盤(8〜)に分けて考えることにします。</p>
+<h1 id="ごいたのプレイヤーが入手可能な情報"><a href="#ごいたのプレイヤーが入手可能な情報" class="headerlink" title="ごいたのプレイヤーが入手可能な情報"></a>ごいたのプレイヤーが入手可能な情報</h1><p>ごいたAIに渡せる情報の一覧を整理します。</p>
+<p>場の情報</p>
+<ul>
+<li>自分の手駒 8個</li>
+<li>場に出された駒 0〜24 (駒は32個あるが、24を超える＝誰かが上がる)</li>
+<li>自分が出した駒の伏せ内容</li>
+</ul>
+<p>行動履歴情報</p>
+<ul>
+<li>各プレイヤーの受け・攻め・なしの履歴</li>
+</ul>
+<p>不明情報</p>
+<ul>
+<li>対戦相手2人と相方の手駒</li>
+<li>自分以外の伏せ駒</li>
+</ul>
+<h1 id="ごいたAIに使用できる手法"><a href="#ごいたAIに使用できる手法" class="headerlink" title="ごいたAIに使用できる手法"></a>ごいたAIに使用できる手法</h1><h2 id="完全読み"><a href="#完全読み" class="headerlink" title="完全読み"></a>完全読み</h2><p>手駒の情報がすべて判明している場合に、すべての取りうる手を試して、プレイヤー全員が最善手を打った場合に、誰かが上がるまで盤面を進め、何点獲得できるかを読みます。</p>
+<p>Min-Max法(α-β法)などを使用して、ゲーム木探索を行います。</p>
+<p>全員の手駒情報が判明している場合にしか使えないので、相手の手駒を予測する手法と組み合わせて使用することになります。</p>
+<h3 id="特徴"><a href="#特徴" class="headerlink" title="特徴"></a>特徴</h3><ul>
+<li>隠された情報の予測精度が高くなればなるほど有効な手法。</li>
+<li>序盤から完全読みを行うことは、可能性が多くなりすぎるため、現実的な計算時間では終わらないので、12駒程度(6手番)が過ぎた段階までは使えない。</li>
+</ul>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>棋譜の解析を行う場合に、手の評価をする</li>
+<li>手駒を予測する手法と組み合わせて、予測した結果で手の評価をする</li>
+</ul>
+<h2 id="先読み"><a href="#先読み" class="headerlink" title="先読み"></a>先読み</h2><p>完全読みとは異なり、何手番分読むかを決めて、先の展開を考えることです。</p>
+<p>AIが内部的にごいたの盤面を進めて、進めた結果自分に有利か不利かを評価し、手を評価する。</p>
+<h3 id="特徴-1"><a href="#特徴-1" class="headerlink" title="特徴"></a>特徴</h3><ul>
+<li>最終盤面まで進めないため、計算時間が少なく済む。</li>
+<li>読みの精度は途中の盤面を評価する手法の精度に大きく依存する。</li>
+</ul>
+<h3 id="用途-1"><a href="#用途-1" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>序盤の手を評価する。</li>
+</ul>
+<h2 id="モンテカルロ法"><a href="#モンテカルロ法" class="headerlink" title="モンテカルロ法"></a>モンテカルロ法</h2><p>ランダムに試行を重ねることで、妥当な結果を確率的に導き出す手法です。</p>
+<p>相手の駒をランダムに予測して、何十回、何百回と完全読みを行うことで、どの手を採用した場合に最善となりそうかを予測します。</p>
+<h3 id="特徴-2"><a href="#特徴-2" class="headerlink" title="特徴"></a>特徴</h3><ul>
+<li>正確なアルゴリズムがなくとも、ある程度妥当な結果を導き出せる。</li>
+<li>数多くの試行を行うため、計算時間が少ない評価手法と組み合わせる必要がある。</li>
+</ul>
+<h3 id="用途-2"><a href="#用途-2" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>終盤の完全読み</li>
+<li>中盤の読み</li>
+</ul>
+<h2 id="ルールベース評価"><a href="#ルールベース評価" class="headerlink" title="ルールベース評価"></a>ルールベース評価</h2><p>いくつかのルールを設けて手の評価を行う手法です。</p>
+<p>評価ルールを全てリストアップして実装していくことになります。例えば<code>し</code>が4枚あれば<code>し</code>から攻める手を評価値高めにするとか。</p>
+<p>評価ルールを何個も実装していくと、どのルールの評価をどのような配分で採用するべきか、調整が難しくなります。その場合は、<code>GA(遺伝的アルゴリズム)</code>などを使用して、最適なルールの優先度を決めるのが良いと思います。</p>
+<h3 id="特徴-3"><a href="#特徴-3" class="headerlink" title="特徴"></a>特徴</h3><ul>
+<li>ルールで決めた通りに手を評価する</li>
+<li>ルールを網羅するのが大変</li>
+</ul>
+<h3 id="用途-3"><a href="#用途-3" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>打ち出し(1手目)の評価</li>
+<li>5しの場合の判断</li>
+<li>王玉や4しなど、明らかに有効な手順が明確に決まる場面</li>
+<li>打ち方に特徴のあるコンピューターごい打ちを再現する場合(ゲームの敵キャラとか)</li>
+</ul>
+<h2 id="機械学習-ディープラーニング"><a href="#機械学習-ディープラーニング" class="headerlink" title="機械学習(ディープラーニング)"></a>機械学習(ディープラーニング)</h2><p>場の情報などを与えて、有利不利の評価をする手法です。</p>
+<p>何の情報を与えて、何を評価させるかというのを考えることも重要なので、用途例を。</p>
+<p><strong>初手の打ち出し評価</strong><br>初手の持ち駒だけを評価します。</p>
+<p><strong>5しの続行判断</strong><br>これも持ち駒だけを評価します。</p>
+<p><strong>盤面評価</strong><br>現在の場面で自分がどの程度有利か評価します。</p>
+<p><strong>手駒予想</strong><br>自分意外のプレイヤーの残り手駒を予想します。</p>
+<p>自分の残り手駒、場の状態などを与えて、それが良いか悪いかを教えてあげる作業を10万回〜100万回程度行うことで、盤面評価が出来るように学習させます。</p>
+<h3 id="特徴-4"><a href="#特徴-4" class="headerlink" title="特徴"></a>特徴</h3><ul>
+<li>入力する情報と、評価軸をしっかりと定めることで、うまく評価してくれることが期待できます。</li>
+<li>どんな評価がどの程度正確にできるかは未知数。</li>
+</ul>
+<h3 id="用途-4"><a href="#用途-4" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>ルールベースの手法では評価精度を高められない場面の評価</li>
+<li>人間を超える評価基準を持たせる</li>
+</ul>
+<h1 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h1><p>5し判断、打ち出し、序盤〜終盤と、場面によって有効な手法があるので、うまく作る必要があります。<br>基本的に機械学習は、人間の感覚とは外れた、良い手を評価できる可能性があるので、全ての場面で期待が持てます。</p>
+<ul>
+<li>５し判断: ルールベース or 機械学習</li>
+<li>打ち出し: ルールベース or 機械学習</li>
+<li>序盤・中盤: 相手の持ち駒予測 + モンテカルロ法 + 先読み</li>
+<li>終盤: 相手の持ち駒予測 + モンテカルロ法 + 完全読み</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;月日が経つのは早いもので、前回の投稿が約１年前ということに驚きを隠せません。&lt;br&gt;ごいたオンラインも、もうそれくらい長い間稼働しているのですね。&lt;/p&gt;
+&lt;p&gt;最近ごいたソフトウェアをこそこそと作成しているので、開発ブログのほうも更新しましょう。&lt;/p&gt;
+&lt;p&gt;まずは、ず
+    
+    </summary>
+    
+    
+      <category term="ごいた" scheme="http://yoskeoka.github.io/tags/%E3%81%94%E3%81%84%E3%81%9F/"/>
+    
+      <category term="AI" scheme="http://yoskeoka.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ごいたAIの実装手法</title>
+    <link href="http://yoskeoka.github.io/2016/03/09/ai-2016-03-09/"/>
+    <id>http://yoskeoka.github.io/2016/03/09/ai-2016-03-09/</id>
+    <published>2016-03-09T13:28:23.000Z</published>
+    <updated>2017-03-18T05:04:38.470Z</updated>
+    
+    <content type="html"><![CDATA[<p>しばらく間が空いてしまいましたね^^;<br>すこしプログラミング欲がでてきたので、ここも書いてしまいましょう。</p>
+<h2 id="ごいたAIをどう作るか？という点について"><a href="#ごいたAIをどう作るか？という点について" class="headerlink" title="ごいたAIをどう作るか？という点について"></a>ごいたAIをどう作るか？という点について</h2><p>ごいたのAIを作成するためのアプローチは大きく分けて、２通りあります。</p>
+<ol>
+<li><p>ルールベースの実装</p>
+</li>
+<li><p>機械学習による実装(<strong>本命</strong>)</p>
+</li>
+</ol>
+<p>それぞれどういうことか、説明しましょう。</p>
+<h2 id="ルールベースの実装"><a href="#ルールベースの実装" class="headerlink" title="ルールベースの実装"></a>ルールベースの実装</h2><p>コンピューターが人間の仕事を手伝ったり、置き換わったリするようになって、35年以上経ちました。その間にAIを作成しようという動きは何度かありまして・・・<br><a href="https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0" target="_blank" rel="external">エキスパートシステム</a>というものを聞いたことがあるでしょうか？エキスパートシステムは、普通であれば大量の知識を抱えた専門家（法律家とか税理士とか、技術屋もですが、そういう人です）に代わって、ある問に対する答えを返すというものです。これを使って業務等に活かしていこうという研究や開発が行われていたこともありました。実装方法はというと、ものすごく大雑把に言えば、</p>
+<p><strong>○○ならば××する</strong></p>
+<p>というルールを大量に覚えさせて、最終的な答えを導き出すものです。</p>
+<p>ごいたは駒の数が、他のゲームに比べれば比較的少なめなので、作成するべきルールも、数えることが出来る程度に収まってくれるのではないでしょうか。それでも数十個のルールを組み込む必要はありそうです。</p>
+<p>例えばですが</p>
+<ul>
+<li>3香以上持っていれば、攻めは香から行う</li>
+<li>王玉があれば、２回目の攻めは王で行う</li>
+<li>しかし、王玉があっても、角角 or 飛飛があれば２回めの攻めはそちらで行う</li>
+</ul>
+<p>とか、そういうのですね。書けば書くほどキリがない気もします。<br>書いたら書いたで、それはごいたの考え方という解説書になるほど書けるのではないでしょうか。</p>
+<p>ルールベースの実装とは、こういった場面毎の判断基準をすべてプログラムに組み込んで、最適な手を判断させる方法です。<br>これでも、まあ、対戦してて不足のない相手は作れるでしょう。</p>
+<h2 id="機械学習による実装"><a href="#機械学習による実装" class="headerlink" title="機械学習による実装"></a>機械学習による実装</h2><p>最近、この話題アツいですよね。自動運転車とか、ディープラーニングとか、ニューラルネットワークとか、画像認識、自然言語処理、、、とか。</p>
+<p>現実に実用化されているものでは、Facebookの顔認識機能や、Google翻訳は便利ですよね。<br>これらは、以前はルールベースで判断などをしていたものを、人工知能の研究が進むことで、機械学習の手法に置き換わっていったものです。プログラムは何をしているかというと、正解やお手本となる大量のデータを読み込んで、その中から共通のルールや、特徴などを抽出するという作業を行っています。その抽出した特徴を使って、新しい問いに対しての答えを導き出します。<br>翻訳機能であれば、人間が翻訳した原版と翻訳版のデータを何冊分も読み込ませるなどして、翻訳のパターンを覚えた結果を使って、あなたが入力した文章の翻訳結果を導き出しています。</p>
+<p>最近のニュースになっていましたが、囲碁のプログラムがついにプロレベルになったとか。これも機械学習が使われています。</p>
+<p>ごいたは駒が少ないとはいえ、その組み合わせは膨大です。また試合の展開も似ているようで、異なる場面が多く登場します。その中から、勝ちパターンを探すことを機械にやらせようというのが機械学習です。</p>
+<h2 id="ルールベース-vs-機械学習"><a href="#ルールベース-vs-機械学習" class="headerlink" title="ルールベース vs 機械学習"></a>ルールベース vs 機械学習</h2><p>突然、ごいたとは関係ない話ですみません。<br>私は、オセロがわりと強いのですが、オセロというのは、<a href="http://uguisu.skr.jp/othello/" target="_blank" rel="external">勝ち方の理論</a>がかなり確立されていて、プログラムの作りがいのある題材なのです。過去にオセロプログラムを作ってみたこともあります。<br>オセロプログラムも、勝ち方の理論をルールベースで組み込んでいけばそれなりに強くすることはできるのですが、どうしても限界があります。有名（？）なところで、<a href="http://www.mameson.com/prw/prw.html" target="_blank" rel="external">パンダオセロ</a>というのがあります。パンダパパは強い、と言われているのですが、これはある程度のオセロプレイヤーならまず負けないレベルなので、たいして強くありません。<br>しかし、機械学習をベースに強くなったロジステロというソフトは、人間のオセロチャンピオンに圧倒的な強さで勝利しました。1997年のことです。<br>それから２０年近く経って、オセロよりも圧倒的に計算量の多い囲碁で同じことが起きようとしています。</p>
+<p>ルールベースのルールを人間が一つ一つ組み上げていくのは労力に見合わない・・・と今までの事例が証明しているので、ごいたも機械学習を前提としてAIを考えていきます。</p>
+<h2 id="ごいたと機械学習"><a href="#ごいたと機械学習" class="headerlink" title="ごいたと機械学習"></a>ごいたと機械学習</h2><p>単純に機械学習でごいたAIを作っていくといっても、これもまた、色々と分類したりすることができるのですが、それは次回、ごいたAI〜機械学習編〜として別途書きましょう。<br>ごいた特有の課題もあります。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;しばらく間が空いてしまいましたね^^;&lt;br&gt;すこしプログラミング欲がでてきたので、ここも書いてしまいましょう。&lt;/p&gt;
+&lt;h2 id=&quot;ごいたAIをどう作るか？という点について&quot;&gt;&lt;a href=&quot;#ごいたAIをどう作るか？という点について&quot; class=&quot;headerl
+    
+    </summary>
+    
+    
+      <category term="ごいた" scheme="http://yoskeoka.github.io/tags/%E3%81%94%E3%81%84%E3%81%9F/"/>
+    
+      <category term="AI" scheme="http://yoskeoka.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>このブログに書くこと</title>
+    <link href="http://yoskeoka.github.io/2015/12/01/roadmap/"/>
+    <id>http://yoskeoka.github.io/2015/12/01/roadmap/</id>
+    <published>2015-11-30T15:02:27.000Z</published>
+    <updated>2017-03-18T05:04:38.470Z</updated>
+    
+    <content type="html"><![CDATA[<p>ぶっちゃけると、Hexoというブログ生成ツールを使ってみたかっただけなんですが。</p>
+<p>ブログを作ってみるからには何かテーマを決めて書いていったほうが実りがある。自分にはなにがあるのか？そうなるとすぐに思いつくのは、ごいたオンライン。ということで、ごいたオンラインの機能について書くのか・・・というと、そうではありません。</p>
+<h2 id="ごいたを科学する"><a href="#ごいたを科学する" class="headerlink" title="ごいたを科学する"></a>ごいたを科学する</h2><p>近頃は、ビジネスにおいてもデジタル化、ソフトウェアが急激に注目を集めているので、ここは勉強の一環として、ごいたをデジタル、ソフトウェアの方面から攻略していこうというのがこのブログの目的です。</p>
+<h2 id="目標は？"><a href="#目標は？" class="headerlink" title="目標は？"></a>目標は？</h2><p>何事をするにも、まず目標設定は大事。では、大きな、遠いゴールから設定しましょう。<br>集大成としては、チェス・オセロ・将棋のように人間並、もしくはそれ以上のAI(人工知能)が作れたらよいなと思っています。あくまで遠い目標なので、それに至るまでにはいくつもの超えなければいけない壁があります。</p>
+<h2 id="具体的な道のり"><a href="#具体的な道のり" class="headerlink" title="具体的な道のり"></a>具体的な道のり</h2><p>ごいたAIを作成するという目標を立てたところで、小さな目標をいくつか立てて、見通しをたてることにします。</p>
+<ol>
+<li><p>ごいたの棋譜ファイル形式を決める</p>
+<ul>
+<li>棋譜ファイルは、ごいたオンラインなどのデジタル形式でごいたを遊んだ際の記録を、保存、解析などするときに必要となってきます。今のところ、デジタル形式のごいたの棋譜は誰も提唱していないはずなので、今考えれば、発明者になれます。やったね！</li>
+</ul>
+</li>
+<li><p>ごいたの棋譜再生・編集ソフトを作成する</p>
+<ul>
+<li>棋譜ファイルだけあっても価値が低いですよね。なので、棋譜ファイルを開いて、戦局がどう移り変わっていったのか、再生するためのソフトウェアが必要となります。</li>
+</ul>
+</li>
+<li><p>ごいたAIのインターフェースを決める</p>
+<ul>
+<li>ソフトウェアの話になりますが、AIなどの外部から後で足すことが出来る機能を<strong>他人</strong>に作成してもらうためには、こういうデータの受け渡し方法でやります。というのを予め決めておかなければなりません。なので、これも誰も考えていないはずなので、勝手に考えます。誰か考えてくれてもいいんですよ？</li>
+</ul>
+</li>
+<li><p>ごいたAIの実装方法を考える</p>
+<ul>
+<li><p>これ、一番大変です。論文が何冊か書けてしまうと思います。ごいたは、チェス、オセロ、将棋、囲碁とは決定的に異なる点が２つほどあるのです。何かというと</p>
+<ul>
+<li>プレイヤーが2人ではない。しかもチーム戦である。</li>
+<li>試合の状況に不確定要素がある。(完全情報ゲームではない)</li>
+</ul>
+</li>
+<li><p>一番近いゲーム形式を持つのは、麻雀だと思います。試しに麻雀のAIについての論文を探してみましょう。ふむふむ。人間に遠く及んでいない…という結果が出ているんですが。</p>
+</li>
+<li><p><a href="http://www.google.co.jp/search?q=%E9%BA%BB%E9%9B%80+ai+%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0" target="_blank" rel="external">「麻雀 AI アルゴリズム」での検索結果</a></p>
+</li>
+</ul>
+</li>
+<li><p>ごいたAIを実装する</p>
+<ul>
+<li>これは、4.と抱き合わせで行っていく必要があります。考えて、アイデアを実装して、評価して。これを繰り返して最強のごいたAIが出来る。といいなあ。</li>
+</ul>
+</li>
+</ol>
+<h3 id="今後のネタ"><a href="#今後のネタ" class="headerlink" title="今後のネタ"></a>今後のネタ</h3><p>ごいたAIについて、今頭の中にある手法について書こうと思っています。<br>ごいたAIについて考える会というのが開催されていれば、飛んでいきます。よろしくお願いします。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ぶっちゃけると、Hexoというブログ生成ツールを使ってみたかっただけなんですが。&lt;/p&gt;
+&lt;p&gt;ブログを作ってみるからには何かテーマを決めて書いていったほうが実りがある。自分にはなにがあるのか？そうなるとすぐに思いつくのは、ごいたオンライン。ということで、ごいたオンラインの
+    
+    </summary>
+    
+    
+      <category term="ごいた" scheme="http://yoskeoka.github.io/tags/%E3%81%94%E3%81%84%E3%81%9F/"/>
+    
+      <category term="AI" scheme="http://yoskeoka.github.io/tags/AI/"/>
+    
+      <category term="goita-online" scheme="http://yoskeoka.github.io/tags/goita-online/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoskeoka.github.io/2015/12/01/hello-world/"/>
+    <id>http://yoskeoka.github.io/2015/12/01/hello-world/</id>
+    <published>2015-11-30T15:00:00.000Z</published>
+    <updated>2017-03-18T06:38:22.702Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
